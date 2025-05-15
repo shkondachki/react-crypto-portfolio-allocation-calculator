@@ -1,0 +1,24 @@
+@use '../../styles/variables' as *;
+
+.recommendation {
+  .recommendationBox {
+    padding: 5px 10px;
+    min-width: 72px;
+    font-size: 15px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    border-radius: $border-radius-sm;
+
+    &.buy {
+      background-color: $success-color;
+      color: $text-primary;
+    }
+
+    &.sell {
+      background-color: $error-color;
+      color: $text-primary;
+    }
+  }
+} 

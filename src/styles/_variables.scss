@@ -1,0 +1,32 @@
+// Colors
+$primary-bg: #0c151c;
+$secondary-bg: #16242f;
+$tertiary-bg: #121d26;
+$accent-color: #65d9ff;
+$text-primary: #ffffff;
+$text-secondary: #89a3b8;
+$button-hover: #50afcf;
+$success-color: #4caf50;
+$error-color: #f44336;
+
+// Typography
+$font-family: 'JetBrains Mono', 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+
+// Border radius
+$border-radius: 12px;
+$border-radius-sm: 6px;
+
+// Transitions
+$transition-speed: 0.2s;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large-desktop: 1440px; // Optional if you want a really big screen breakpoint

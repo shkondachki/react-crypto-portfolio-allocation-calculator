@@ -1,0 +1,27 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.card {
+  background-color: $secondary-bg;
+  border-radius: $border-radius;
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+  overflow: hidden;
+
+  @include mobile-and-below {
+    padding: $spacing-md $spacing-sm;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    margin-bottom: $spacing-lg;
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+
+    .icon {
+      font-size: 1.1em;
+    }
+  }
+}
+

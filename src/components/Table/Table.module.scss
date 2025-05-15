@@ -1,0 +1,31 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.tableWrapper {
+  @include tablet-and-below {
+    overflow-x: scroll;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  tbody tr:nth-child(odd) {
+    background: $tertiary-bg;
+  }
+
+  th, td {
+    padding: $spacing-sm;
+    text-align: center;
+  }
+
+  th {
+    color: $text-secondary;
+    font-weight: 500;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+} 

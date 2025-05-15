@@ -1,0 +1,31 @@
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+.container {
+  max-width: 1500px;
+  padding: $spacing-lg;
+
+  @include mobile-and-above {
+    margin: 20px auto;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 600;
+  }
+  
+  .inner {
+    display: grid;
+    gap: 40px;
+
+    @include desktop-and-above {
+      grid-template-columns: 1fr 1.6fr;
+    }
+
+    .tables {
+      overflow: hidden;
+    }
+  }
+}
