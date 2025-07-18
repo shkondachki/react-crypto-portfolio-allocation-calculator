@@ -1,4 +1,5 @@
 @use '../styles/variables' as *;
+@use 'sass:color';
 
 .button {
   background-color: $accent-color;
@@ -9,7 +10,7 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color $transition-speed;
+  transition: all $transition-speed;
   font-family: $font-family;
 
   &:hover {
@@ -33,7 +34,27 @@
     color: $text-primary;
 
     &:hover {
-      background-color: darken($error-color, 10%);
+      background-color: color.adjust($error-color, $lightness: -15%);
     }
+  }
+
+  &.link {
+    background-color: transparent;  
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+
+    &.error {
+      color: $error-color;
+      
+      &:hover {
+        border-color: $error-color;
+      }
+    }
+
+    
   }
 }

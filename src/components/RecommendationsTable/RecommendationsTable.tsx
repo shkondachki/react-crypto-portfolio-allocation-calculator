@@ -1,6 +1,7 @@
 import { Recommendation } from '../../types/types';
 import { Table, Column } from '../Table/Table';
 import { Card } from '../Card/Card';
+import { TokenIcon } from '../TokenIcon/TokenIcon';
 import styles from './RecommendationsTable.module.scss';
 
 interface RecommendationsTableProps {
@@ -9,7 +10,10 @@ interface RecommendationsTableProps {
 
 export const RecommendationsTable = ({ recommendations }: RecommendationsTableProps) => {
   const columns: Column<Recommendation>[] = [
-    { header: 'Asset', accessor: 'asset' },
+    {
+      header: 'Asset',
+      accessor: (rec: Recommendation) => <TokenIcon symbol={rec.asset} />
+    },
     {
       header: 'Action',
       accessor: (rec: Recommendation) => (
@@ -21,7 +25,7 @@ export const RecommendationsTable = ({ recommendations }: RecommendationsTablePr
     },
     {
       header: 'Amount (€)',
-      accessor: (rec: Recommendation) => rec.action !== '—' ? `€${rec.amount.toFixed()}` : '—'
+      accessor: (rec: Recommendation) => rec.action !== 'No changes' ? `€${rec.amount.toFixed()}` : '€0'
     }
   ];
 

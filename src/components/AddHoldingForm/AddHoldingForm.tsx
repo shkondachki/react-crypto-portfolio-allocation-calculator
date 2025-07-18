@@ -7,18 +7,31 @@ interface AddHoldingFormProps {
   onAddHolding: (holding: CryptoHolding) => void;
 }
 
+// Use a separate type for form state to allow string values
+interface HoldingFormState {
+  id: string;
+  name: string;
+  value: string;
+  targetPercentage: string;
+}
+
 export const AddHoldingForm = ({ onAddHolding }: AddHoldingFormProps) => {
-  const [newHolding, setNewHolding] = useState<CryptoHolding>({
+  const [newHolding, setNewHolding] = useState<HoldingFormState>({
     id: '',
     name: '',
-    value: 0,
-    targetPercentage: 0
+    value: '',
+    targetPercentage: ''
   });
 
   const handleSubmit = () => {
-    if (newHolding.name && newHolding.value >= 0) {
-      onAddHolding({ ...newHolding, id: Date.now().toString() });
-      setNewHolding({ id: '', name: '', value: 0, targetPercentage: 0 });
+    if (newHolding.name && newHolding.value !== '') {
+      onAddHolding({
+        ...newHolding,
+        value: Number(newHolding.value) || 0,
+        targetPercentage: Number(newHolding.targetPercentage) || 0,
+        id: Date.now().toString()
+      });
+      setNewHolding({ id: '', name: '', value: '', targetPercentage: '' });
     }
   };
 
@@ -30,9 +43,9 @@ export const AddHoldingForm = ({ onAddHolding }: AddHoldingFormProps) => {
           <input
             className={styles.input}
             type="text"
-            value={(newHolding.name)}
-            onChange={(e) => setNewHolding({ ...newHolding, name: (e.target.value).toUpperCase() })}
-            placeholder="e.g., BTC"
+            value={newHolding.name}
+            onChange={e => setNewHolding({ ...newHolding, name: e.target.value.toUpperCase() })}
+            placeholder="BTC"
           />
         </div>
         <div className={styles.inputGroup}>
@@ -41,8 +54,8 @@ export const AddHoldingForm = ({ onAddHolding }: AddHoldingFormProps) => {
             className={styles.input}
             type="number"
             value={newHolding.value}
-            onChange={(e) => setNewHolding({ ...newHolding, value: Number(e.target.value) })}
-            placeholder="0.00"
+            onChange={e => setNewHolding({ ...newHolding, value: e.target.value })}
+            placeholder="0"
           />
         </div>
         <div className={styles.inputGroup}>
@@ -51,7 +64,7 @@ export const AddHoldingForm = ({ onAddHolding }: AddHoldingFormProps) => {
             className={styles.input}
             type="number"
             value={newHolding.targetPercentage}
-            onChange={(e) => setNewHolding({ ...newHolding, targetPercentage: Number(e.target.value) })}
+            onChange={e => setNewHolding({ ...newHolding, targetPercentage: e.target.value })}
             placeholder="0"
           />
         </div>

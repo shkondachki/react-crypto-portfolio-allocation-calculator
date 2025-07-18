@@ -14,9 +14,9 @@ export const storage = {
       };
       const serialized = JSON.stringify(item);
       localStorage.setItem(key, serialized);
-      console.log(`[Storage] Saved data for key: ${key}`, value);
+      // console.log(`[Storage] Saved data for key: ${key}`, value);
     } catch (error) {
-      console.error('[Storage] Error saving data:', error);
+      // console.error('[Storage] Error saving data:', error);
     }
   },
 
@@ -37,7 +37,7 @@ export const storage = {
         return null;
       }
 
-      console.log(`[Storage] Retrieved data for key: ${key}`, value);
+      // console.log(`[Storage] Retrieved data for key: ${key}`, value);
       return value;
     } catch (error) {
       console.error('[Storage] Error retrieving data:', error);
@@ -48,7 +48,7 @@ export const storage = {
   remove: (key: string): void => {
     try {
       localStorage.removeItem(key);
-      console.log(`[Storage] Removed data for key: ${key}`);
+      // console.log(`[Storage] Removed data for key: ${key}`);
     } catch (error) {
       console.error('[Storage] Error removing data:', error);
     }

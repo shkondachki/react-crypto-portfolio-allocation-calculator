@@ -1,10 +1,3 @@
-// export type CryptoAsset = {
-//   id: string;
-//   name: string;
-//   symbol: string;
-//   currentPrice: number;
-// };
-
 export type CryptoHolding = {
   id: string;
   name: string;
@@ -19,7 +12,7 @@ export type PortfolioState = {
   lastUpdated: Date;
 };
 
-export type RecommendationAction = 'Buy' | 'Sell' | '—';
+export type RecommendationAction = 'Buy' | 'Sell' | 'No changes';
 
 export type Recommendation = {
   asset: string;
@@ -27,11 +20,3 @@ export type Recommendation = {
   amount: number;
   timestamp: Date;
 };
-
-// export type AddHoldingFormData = Omit<CryptoHolding, 'id'>;
-//
-// export type TableColumn<T> = {
-//   header: string;
-//   accessor: keyof T | ((item: T) => React.ReactNode);
-//   className?: string;
-// };

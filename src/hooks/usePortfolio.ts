@@ -56,7 +56,7 @@ export const usePortfolio = () => {
 
       return {
         asset: holding.name,
-        action: Math.abs(difference) < 1 ? '—' : difference > 0 ? 'Buy' : 'Sell',
+        action: Math.abs(difference) < 1 ? 'No changes' : difference > 0 ? 'Buy' : 'Sell',
         amount: Math.abs(difference),
         timestamp: new Date()
       };

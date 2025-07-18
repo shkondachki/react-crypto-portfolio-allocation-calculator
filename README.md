@@ -1,10 +1,10 @@
-# 💼 Crypto Portfolio Allocation
+# 💼 Portfolio Allocation Calculator
 
 A simple, intuitive React app for managing and rebalancing your cryptocurrency portfolio. Enter your holdings, set target allocations, and receive clear buy/sell recommendations based on your goals.
 
 ## 🚀 Features
 
-- 📊 Add and view your crypto holdings
+- 📊 Add and view your portfolio holdings
 - 🎯 Set target percentage allocations
 - 🔁 Get buy/sell recommendations to rebalance your portfolio
 - 💾 State persistence with local storage

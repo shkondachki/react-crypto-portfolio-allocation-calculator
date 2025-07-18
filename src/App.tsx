@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Crypto Portfolio Allocation</h1>
+      <h1 className={styles.title}>Portfolio Allocation Calculator</h1>
 
       <div className={styles.inner}>
         <div className={styles.form}>
