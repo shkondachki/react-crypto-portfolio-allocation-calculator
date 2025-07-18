@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import * as Web3Icons from '@web3icons/react';
 
 export function getCryptoIcon(symbol: string, size = 22): ReactNode {
