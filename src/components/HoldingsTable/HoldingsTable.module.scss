@@ -1,9 +1,42 @@
 @use '../../styles/variables' as *;
 @use '../../styles/buttons' as *;
+@use '../../styles/mixins' as *;
 
 .divider {
     color: $text-secondary;
     font-size: 12px;
     position: relative;
     top: -1px;
+}
+.holdingsTitleWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+
+    @include tablet-and-below {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .smallText {
+        font-size: 16px;
+    }
+
+    .warning {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        background: $warning-color;
+        color: $black;
+        padding: 4px 8px;
+        border-radius: 3px;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        @include tablet-and-below {
+            width: fit-content;
+        }
+    }
 }

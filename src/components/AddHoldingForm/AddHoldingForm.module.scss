@@ -15,6 +15,13 @@
   gap: $spacing-xs;
 }
 
+.labelWithTooltip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px; /* Adjust based on your existing spacing */
+}
+
 .inputLabel {
   color: $text-secondary;
   font-size: 0.9rem;
@@ -41,6 +48,11 @@
       opacity: .5;
     }
   }
+}
+
+.inputError {
+  border-color: $error-color !important;
+  box-shadow: 0 0 0 1px $error-color;
 }
 
 

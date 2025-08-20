@@ -6,7 +6,6 @@
   border-radius: $border-radius;
   padding: $spacing-md;
   margin-bottom: $spacing-md;
-  overflow: hidden;
 
   @include mobile-and-below {
     padding: $spacing-md $spacing-sm;

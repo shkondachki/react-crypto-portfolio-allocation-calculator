@@ -24,7 +24,31 @@ export const usePortfolio = () => {
 
   const addHolding = useCallback((holding: CryptoHolding) => {
     setHoldings(prev => {
-      const newHoldings = [...prev, { ...holding, id: Date.now().toString() }];
+      const normalizedIncomingName = holding.name.trim().toUpperCase();
+      const existingIndex = prev.findIndex(h => h.name.trim().toUpperCase() === normalizedIncomingName);
+
+      let newHoldings: CryptoHolding[];
+      if (existingIndex !== -1) {
+        const existing = prev[existingIndex];
+
+        const updated: CryptoHolding = {
+          ...existing, // Keep all existing properties
+          value: holding.value ?? existing.value, // Use new value OR keep existing
+          targetPercentage: holding.targetPercentage ?? existing.targetPercentage,
+          lastUpdated: new Date()
+        };
+
+        newHoldings = [...prev];
+        newHoldings[existingIndex] = updated;
+      }
+      else {
+        newHoldings = [...prev, {
+          ...holding,
+          id: Date.now().toString(),
+          lastUpdated: new Date()
+        }];
+      }
+
       // Save to cache immediately after state update
       storage.set(PORTFOLIO_CACHE_KEY, {
         holdings: newHoldings,

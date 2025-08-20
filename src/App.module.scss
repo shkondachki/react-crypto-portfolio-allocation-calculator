@@ -3,10 +3,11 @@
 
 .container {
   max-width: 1500px;
+  margin: 20px auto;
   padding: $spacing-lg;
 
-  @include mobile-and-above {
-    margin: 20px auto;
+  @include mobile-and-below {
+    padding: $spacing-lg $spacing-sm;
   }
 
   .title {

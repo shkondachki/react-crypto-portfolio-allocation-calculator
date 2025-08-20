@@ -4,7 +4,7 @@ import styles from './Card.module.scss';
 interface CardProps {
   children: ReactNode;
   className?: string;
-  title?: string;
+  title?: ReactNode;
   icon?: string;
 }
 
